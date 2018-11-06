@@ -8,19 +8,6 @@ node {
 		stage('Build') {
 		sh "echo 'shell scripts to run the build'"
           }
-		stage('Tests') {
-                     parallel 'static': {
-                },
-                'unit':{
-		sh "echo 'shell scripts to run the unit tests'"
-                }
-                'integration':{
-		sh "echo 'shell scripts to run the integration tests'"
-                }
-                'acceptance':{
-		sh "echo 'shell scripts to run the acceptance tests'"
-                }
-          }
 		stage('Create MR') {
 		sh "echo 'create MR to Merge Code'"
           }
