@@ -3,13 +3,6 @@ node {
 	deleteDir()
 	try { 
 		stage('Clone') {
-                    when {
-                       expression {
-                            GIT_BRANCH = 'origin/' + sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
-                            return !(GIT_BRANCH == 'origin/master' || params.FORCE_FULL_BUILD)
-               }
-
-            }
 		checkout scm
           }
 		stage('Build') {
