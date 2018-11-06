@@ -12,11 +12,6 @@ node {
 		sh "echo 'create MR to Merge Code'"
           }
 		stage('Deploy') {
-                when {
-                   expression {
-               currentBuild.result == "SUCCESS"
-                  }
-                }
 		   sh "echo 'shell scripts to Deploy Code'"
           }
 
