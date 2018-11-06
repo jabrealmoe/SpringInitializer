@@ -19,7 +19,7 @@ node {
                 },
                 'unit': {
                    sh "echo 'shell scripts to run the unit tests'"
-                }
+                },
                 'integration': {
                    sh "echo 'shell scripts to run the integration tests'"
                 }
