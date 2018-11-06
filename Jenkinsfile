@@ -16,13 +16,13 @@ node {
                 },
                 'integration': {
                    sh "echo 'shell scripts to run the integration tests'"
-                }
+                },
                 'code-quality': {
                    sh "echo 'shell scripts to run the code-quality tests'"
-                }
+                },
                 'performance': {
                    sh "echo 'shell scripts to run the performance tests'"
-                }
+                },
                 'acceptance': {
                    sh "echo 'shell scripts to run the acceptance tests'"
                 }
