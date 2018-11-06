@@ -33,6 +33,16 @@ node {
                 }
           }
 		stage('Deploy') {
+ when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
+           steps{
+		sh "echo 'shell scripts to Deploy Code'"
+          }
+          }
+		stage('Deploy') {
 		sh "echo 'shell scripts to Deploy Code'"
           }
     } catch(err) {
