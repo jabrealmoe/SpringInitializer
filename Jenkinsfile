@@ -12,7 +12,11 @@ node {
 		sh "echo 'create MR to Merge Code'"
           }
 		stage('Deploy') {
+		steps {
+                     step {
 		   sh "echo 'shell scripts to Deploy Code'"
+                     }
+		}
           }
 
     } catch(err) {
