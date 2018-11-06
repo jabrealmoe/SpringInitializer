@@ -1,4 +1,15 @@
 node {
+ parameters {
+        string (
+            defaultValue: '*',
+            description: '',
+            name : 'BRANCH_PATTERN')
+        booleanParam (
+            defaultValue: false,
+            description: '',
+            name : 'FORCE_FULL_BUILD')
+    }
+
       currentBuild.result = "SUCCESS"
 	deleteDir()
 	try { 
