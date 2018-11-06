@@ -35,12 +35,6 @@ node {
 		stage('Deploy') {
 		sh "echo 'shell scripts to Deploy Code'"
           }
-stage ('Build Skipped') {
-            steps {
-                echo 'Skipped full build.'
-            }
-}
-        }
     } catch(err) {
       currentBuild.result = "FAILED"
       throw err
