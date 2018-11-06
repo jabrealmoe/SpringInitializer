@@ -10,9 +10,7 @@ node {
                }
 
             }
-                steps {
 		checkout scm
-                }
           }
 		stage('Build') {
 		sh "echo 'shell scripts to run the build'"
