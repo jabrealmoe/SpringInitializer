@@ -16,10 +16,10 @@ node {
           }
 		stage('Tests') {
                  parallel 'static': {
--                },
--                'unit':{
--                   sh "echo 'shell scripts to run the unit tests'"
--                }
+                },
+                'unit': {
+                   sh "echo 'shell scripts to run the unit tests'"
+                }
           }
     } catch(err) {
       currentBuild.result = "FAILED"
