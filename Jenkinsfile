@@ -11,9 +11,6 @@ node {
 		stage('Create MR') {
 		sh "echo 'create MR to Merge Code'"
           }
-		stage('Deploy') {
-		sh "echo 'shell scripts to Deploy Code'"
-          }
 		stage('Tests') {
                  parallel 'static': {
                 },
@@ -23,6 +20,10 @@ node {
                 'integration': {
                    sh "echo 'shell scripts to run the integration tests'"
                 }
+          }
+		stage('Deploy') {
+		sh "echo 'shell scripts to Deploy Code'"
+          }
           }
     } catch(err) {
       currentBuild.result = "FAILED"
