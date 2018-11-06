@@ -12,11 +12,12 @@ node {
 		sh "echo 'create MR to Merge Code'"
           }
 		stage('Deploy') {
-		steps {
-                     step {
+                when {
+                   expression {
+               currentBuild.result == "SUCCESS"
+                  }
+                }
 		   sh "echo 'shell scripts to Deploy Code'"
-                     }
-		}
           }
 
     } catch(err) {
