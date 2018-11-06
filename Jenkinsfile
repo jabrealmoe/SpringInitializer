@@ -24,7 +24,6 @@ node {
 		stage('Deploy') {
 		sh "echo 'shell scripts to Deploy Code'"
           }
-          }
     } catch(err) {
       currentBuild.result = "FAILED"
       throw err
