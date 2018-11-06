@@ -1,9 +1,29 @@
 node {
+parameters {
+        string (
+            defaultValue: '*',
+            description: '',
+            name : 'BRANCH_PATTERN')
+        booleanParam (
+            defaultValue: false,
+            description: '',
+            name : 'FORCE_FULL_BUILD')
+    }
+
       currentBuild.result = "SUCCESS"
 	deleteDir()
 	try { 
 		stage('Clone') {
+                    when {
+                       expression {
+                            GIT_BRANCH = 'origin/' + sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
+                            return !(GIT_BRANCH == 'origin/master' || params.FORCE_FULL_BUILD)
+               }
+
+            }
+                steps {
 		checkout scm
+                }
           }
 		stage('Build') {
 		sh "echo 'shell scripts to run the build'"
